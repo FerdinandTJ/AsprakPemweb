@@ -192,7 +192,7 @@
         <!-- Header Section -->
         <header id="header" class="info-container bg-blue-50"
             data-title="Header & Navigasi"
-            data-description="Header adalah bagian paling atas dari sebuah halaman web. Elemen ini seringkali berisi logo situs, judul utama, dan yang paling penting, navigasi utama (menggunakan tag &lt;nav&gt;) yang memungkinkan pengguna berpindah ke halaman lain."
+            data-description="Header adalah bagian paling atas dari sebuah halaman web. Elemen ini seringkali berisi logo situs, judul utama, dan yang paling penting, navigasi utama (menggunakan tag nav) &lt;nav&gt; yang memungkinkan pengguna berpindah ke halaman lain."
             data-code='&lt;header&gt;
   &lt;h1&gt;Judul Situs Web&lt;/h1&gt;
   &lt;nav&gt;
@@ -258,7 +258,7 @@
                         </article>
                          <article class="article wireframe-box !border-red-400 bg-white"
                             data-title="Article (Contoh Lain)"
-                            data-description="Setiap &lt;article&gt; harus diidentifikasi, biasanya dengan menyertakan heading (h1-h6) sebagai anak elemen. Anda bisa memiliki beberapa &lt;article&gt; dalam satu halaman."
+                            data-description="Setiap artikel harus diidentifikasi, biasanya dengan menyertakan heading (h1-h6) sebagai anak elemen. Anda bisa memiliki beberapa &lt;article&gt; dalam satu halaman."
                             data-code='&lt;article class="komentar-pengguna"&gt;
   &lt;p&gt;Ini adalah contoh penggunaan tag article untuk sebuah komentar.&lt;/p&gt;
   &lt;cite&gt;Jane Smith&lt;/cite&gt;
@@ -355,7 +355,6 @@
 
 &lt;label for="lahir"&gt;Tanggal Lahir:&lt;/label&gt;
 &lt;input type="date" id="lahir" name="lahir"&gt;'>
-&lt;input type="date" id="lahir" name="lahir"&gt;'>
                         <div class="tooltip"><h3 class="font-bold">Email, Angka, Tanggal</h3><p class="text-sm text-gray-300">Input spesifik untuk validasi otomatis oleh browser.</p><p class="text-sm">Tag: <code>&lt;input type="email/number/date"&gt;</code></p></div>
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email">
@@ -378,13 +377,12 @@
                     
                     <!-- Radio & Checkbox -->
                     <div class="grid md:grid-cols-2 gap-6">
-                        <fieldset class="info-container !p-4 bg-white" data-title="Tombol Radio" data-description="Tombol radio (`type='radio'`) digunakan saat pengguna hanya boleh memilih satu opsi dari beberapa pilihan. Semua radio button dalam satu grup harus memiliki atribut `name` yang sama." data-code='&lt;fieldset&gt;
-  &lt;legend&gt;Pilih Gender:&lt;/legend&gt;
+                        <fieldset class="info-container !p-4 bg-white" data-title="Tombol Radio" data-description="Tombol radio (`type='radio'`) digunakan saat pengguna hanya boleh memilih satu opsi dari beberapa pilihan. Semua radio button dalam satu grup harus memiliki atribut `name` yang sama." 
+data-code='  &lt;legend&gt;Pilih Gender:&lt;/legend&gt;
   &lt;input type="radio" id="pria" name="gender" value="pria"&gt;
   &lt;label for="pria"&gt;Pria&lt;/label&gt;
   &lt;input type="radio" id="wanita" name="gender" value="wanita"&gt;
-  &lt;label for="wanita"&gt;Wanita&lt;/label&gt;
-&lt;/fieldset&gt;'>
+  &lt;label for="wanita"&gt;Wanita&lt;/label&gt;'>
                             <div class="tooltip"><h3 class="font-bold">Tombol Radio</h3><p class="text-sm text-gray-300">Memungkinkan pengguna memilih SATU opsi dari beberapa pilihan.</p><p class="text-sm">Tag: <code>&lt;input type="radio"&gt;</code></p></div>
                             <legend>Jenis Kelamin:</legend>
                             <div class="radio-checkbox-container">
@@ -397,13 +395,12 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="info-container !p-4 bg-white" data-title="Checkbox" data-description="Checkbox (`type='checkbox'`) memungkinkan pengguna memilih nol atau lebih opsi dari beberapa pilihan. Setiap checkbox bisa memiliki atribut `name` yang sama atau berbeda." data-code='&lt;fieldset&gt;
-  &lt;legend&gt;Pilih Hobi:&lt;/legend&gt;
+                        <fieldset class="info-container !p-4 bg-white" data-title="Checkbox" data-description="Checkbox (`type='checkbox'`) memungkinkan pengguna memilih nol atau lebih opsi dari beberapa pilihan. Setiap checkbox bisa memiliki atribut `name` yang sama atau berbeda." 
+data-code='  &lt;legend&gt;Pilih Hobi:&lt;/legend&gt;
   &lt;input type="checkbox" id="baca" name="hobi1" value="membaca"&gt;
   &lt;label for="baca"&gt;Membaca&lt;/label&gt;
   &lt;input type="checkbox" id="nulis" name="hobi2" value="menulis"&gt;
-  &lt;label for="nulis"&gt;Menulis&lt;/label&gt;
-&lt;/fieldset&gt;'>
+  &lt;label for="nulis"&gt;Menulis&lt;/label&gt;'>
                             <div class="tooltip"><h3 class="font-bold">Checkbox</h3><p class="text-sm text-gray-300">Memungkinkan pengguna memilih BANYAK opsi dari beberapa pilihan.</p><p class="text-sm">Tag: <code>&lt;input type="checkbox"&gt;</code></p></div>
                             <legend>Hobi:</legend>
                             <div class="radio-checkbox-container">
