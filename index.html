@@ -103,17 +103,6 @@
             font-family: 'Courier New', Courier, monospace;
         }
         
-        /* Gaya untuk Modal (Pop-up Detail) */
-        #detail-modal pre {
-            background-color: #111827; /* bg-gray-900 */
-            color: #d1d5db; /* text-gray-300 */
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.875rem;
-        }
-
         /* --- PERBAIKAN --- */
         /* Atasi tooltip header agar tidak terpotong di atas */
         #header > .tooltip {
@@ -127,21 +116,75 @@
             border-color: transparent transparent #1f2937 transparent;
         }
 
-        /* PERBAIKAN BARU: Geser konten utama ke bawah saat header di-hover */
+        /* Geser konten utama ke bawah saat header di-hover */
         #main {
             transition: margin-top 0.3s ease-in-out;
         }
         #header:hover + #main {
-            /* Menambahkan margin atas pada main content saat header di-hover */
-            /* 1.5rem (spasi asli dari space-y-6) + 6.5rem (ruang untuk tooltip) */
             margin-top: 8rem;
+        }
+
+        /* Penyesuaian gaya untuk elemen form */
+        .form-example-container label {
+            text-align: left;
+            font-weight: 500;
+            color: #374151;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .form-example-container input,
+        .form-example-container textarea,
+        .form-example-container select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        .form-example-container fieldset {
+            border: 1px solid #d1d5db;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        .form-example-container legend {
+            padding: 0 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        /* Perbaikan untuk radio button dan checkbox */
+        .form-example-container .radio-checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.5rem;
+        }
+        
+        .form-example-container .radio-checkbox-container input[type="radio"],
+        .form-example-container .radio-checkbox-container input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            flex-shrink: 0;
+        }
+        
+        .form-example-container .radio-checkbox-container label {
+            margin: 0;
+            display: inline;
+            font-weight: 400;
+        }
+        
+        /* Perbaikan untuk spacing antar section form */
+        .form-example-container .form-section {
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-6 md:p-8 flex flex-col items-center">
 
     <div class="max-w-4xl w-full text-center mb-8">
-        <h1 class="text-3xl font-bold text-gray-800">Struktur Layout Web (Elemen Semantik)</h1>
+        <h1 class="text-3xl font-bold text-gray-800">Struktur Layout Web Interaktif</h1>
+        <p class="text-lg text-gray-600 mt-2">Arahkan mouse untuk info singkat, atau klik untuk detail lengkap.</p>
     </div>
 
     <div class="max-w-4xl w-full space-y-6">
@@ -203,7 +246,7 @@
   &lt;h2&gt;Judul Artikel&lt;/h2&gt;
   &lt;p&gt;Ini adalah isi dari artikel. Konten di sini harus bisa berdiri sendiri dan tetap masuk akal jika dibaca terpisah dari sisa situs.&lt;/p&gt;
   &lt;footer&gt;
-    &lt;p&gt;Diposting oleh Ferdinand&lt;/p&gt;
+    &lt;p&gt;Diposting oleh John Doe&lt;/p&gt;
   &lt;/footer&gt;
 &lt;/article&gt;'>
                             <p class="text-md font-medium text-red-800">&lt;div class="article"&gt;</p>
@@ -218,7 +261,7 @@
                             data-description="Setiap &lt;article&gt; harus diidentifikasi, biasanya dengan menyertakan heading (h1-h6) sebagai anak elemen. Anda bisa memiliki beberapa &lt;article&gt; dalam satu halaman."
                             data-code='&lt;article class="komentar-pengguna"&gt;
   &lt;p&gt;Ini adalah contoh penggunaan tag article untuk sebuah komentar.&lt;/p&gt;
-  &lt;cite&gt;Immanuel&lt;/cite&gt;
+  &lt;cite&gt;Jane Smith&lt;/cite&gt;
 &lt;/article&gt;'>
                             <p class="text-md font-medium text-red-800">&lt;div class="article"&gt;</p>
                              <div class="tooltip">
@@ -230,12 +273,12 @@
                     </div>
                 </div>
 
-                <aside id="sidebar" class="wireframe-box bg-yellow-100 md:w-1/3 lg:w-1.4"
+                <aside id="sidebar" class="wireframe-box bg-yellow-100 md:w-1/3 lg:w-1/4"
                     data-title="Sidebar"
                     data-description="Elemen &lt;aside&gt; digunakan untuk konten yang hanya terkait secara tidak langsung dengan konten utama di sekitarnya. Seringkali ditampilkan sebagai bilah sisi. Contohnya adalah glosarium, biografi penulis, atau tautan terkait."
                     data-code='&lt;aside&gt;
   &lt;h3&gt;Tentang Penulis&lt;/h3&gt;
-  &lt;p&gt;Ferdinand adalah seorang pengembang web dengan pengalaman 10 tahun dalam HTML, CSS, dan JavaScript.&lt;/p&gt;
+  &lt;p&gt;John Doe adalah seorang pengembang web dengan pengalaman 10 tahun dalam HTML, CSS, dan JavaScript.&lt;/p&gt;
   &lt;a href="/profil"&gt;Baca lebih lanjut...&lt;/a&gt;
 &lt;/aside&gt;'>
                     <p class="text-lg font-semibold text-yellow-800">&lt;div id="sidebar"&gt;</p>
@@ -253,7 +296,7 @@
             data-title="Footer"
             data-description="Elemen &lt;footer&gt; adalah bagian paling bawah dari sebuah halaman atau sebuah section. Biasanya berisi informasi tentang penulis, data hak cipta, atau tautan ke dokumen terkait seperti kebijakan privasi dan ketentuan layanan."
             data-code='&lt;footer&gt;
-  &lt;p&gt;&copy; 2025 Praktikum Pemrograman Web. Semua Hak Cipta Dilindungi.&lt;/p&gt;
+  &lt;p&gt;&copy; 2025 Nama Situs Web. Semua Hak Cipta Dilindungi.&lt;/p&gt;
   &lt;p&gt;
     &lt;a href="/privacy"&gt;Kebijakan Privasi&lt;/a&gt; |
     &lt;a href="/terms"&gt;Ketentuan Layanan&lt;/a&gt;
@@ -268,16 +311,153 @@
                  <p class="text-center text-lg font-semibold text-purple-800">&lt;div id="footer"&gt;</p>
             </div>
         </footer>
+
+        <!-- Form Section -->
+        <section id="form-section" class="info-container bg-indigo-50"
+            data-title="Formulir HTML"
+            data-description="Elemen &lt;form&gt; digunakan untuk mengumpulkan input dari pengguna. Form bisa berisi berbagai macam elemen input seperti kolom teks, tombol radio, checkbox, tombol submit, dan banyak lagi. Data yang diisi kemudian dapat dikirim ke server untuk diproses."
+            data-code='&lt;form action="/proses-data" method="post"&gt;
+  &lt;!-- Elemen-elemen form diletakkan di sini --&gt;
+&lt;/form&gt;'>
+            <div class="tooltip">
+                <h3 class="font-bold text-lg mb-1">Elemen Formulir</h3>
+                <p class="text-sm mb-2 text-gray-300">Digunakan untuk mengumpulkan data dari pengguna, seperti pendaftaran, login, atau survei.</p>
+                <p class="text-sm">Tag utama: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code></p>
+            </div>
+            <div class="wireframe-box bg-indigo-100 !block !text-left !p-6 form-example-container">
+                <h2 class="text-2xl font-bold text-indigo-800 text-center mb-6">Contoh Elemen Form</h2>
+                <form onsubmit="event.preventDefault(); alert('Form dikirim (simulasi)');" class="space-y-6">
+                    <!-- Text & Password -->
+                    <div class="info-container !p-4 bg-white form-section" 
+                         data-title="Input Teks & Password" 
+                         data-description="Input paling umum. `type='text'` untuk teks biasa dan `type='password'` untuk menyembunyikan karakter yang diketik. Setiap input harus memiliki &lt;label&gt; yang terhubung melalui atribut 'for' dan 'id' untuk aksesibilitas." 
+                         data-code='&lt;label for="nama"&gt;Nama:&lt;/label&gt;
+&lt;input type="text" id="nama" name="nama"&gt;
+
+&lt;label for="sandi"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="sandi" name="sandi"&gt;'>
+                        <div class="tooltip"><h3 class="font-bold">Input Teks & Password</h3><p class="text-sm text-gray-300">Untuk input teks biasa dan input sensitif yang karakternya disembunyikan.</p><p class="text-sm">Tag: <code>&lt;input type="text/password"&gt;</code></p></div>
+                        <label for="username">Nama Pengguna:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Kata Sandi:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <!-- Email, Number, Date -->
+                    <div class="info-container !p-4 bg-white form-section" 
+                         data-title="Input Email, Angka, dan Tanggal" 
+                         data-description="HTML5 menyediakan tipe input spesifik untuk validasi data yang lebih baik. `type='email'` memeriksa format email, `type='number'` hanya menerima angka, dan `type='date'` menampilkan pemilih tanggal." 
+                         data-code='&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;
+
+&lt;label for="umur"&gt;Umur:&lt;/label&gt;
+&lt;input type="number" id="umur" name="umur" min="0"&gt;
+
+&lt;label for="lahir"&gt;Tanggal Lahir:&lt;/label&gt;
+&lt;input type="date" id="lahir" name="lahir"&gt;'>
+&lt;input type="date" id="lahir" name="lahir"&gt;'>
+                        <div class="tooltip"><h3 class="font-bold">Email, Angka, Tanggal</h3><p class="text-sm text-gray-300">Input spesifik untuk validasi otomatis oleh browser.</p><p class="text-sm">Tag: <code>&lt;input type="email/number/date"&gt;</code></p></div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="age">Umur:</label>
+                        <input type="number" id="age" name="age" min="0">
+                        <label for="birthdate">Tanggal Lahir:</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="info-container !p-4 bg-white form-section" 
+                         data-title="Textarea" 
+                         data-description="Elemen &lt;textarea&gt; digunakan untuk input teks multi-baris, seperti kolom komentar atau pesan. Ukurannya bisa diatur dengan atribut `rows` dan `cols`." 
+                         data-code='&lt;label for="pesan"&gt;Pesan Anda:&lt;/label&gt;
+&lt;textarea id="pesan" name="pesan" rows="4" cols="50"&gt;&lt;/textarea&gt;'>
+                        <div class="tooltip"><h3 class="font-bold">Textarea</h3><p class="text-sm text-gray-300">Untuk input teks yang panjang atau multi-baris.</p><p class="text-sm">Tag: <code>&lt;textarea&gt;</code></p></div>
+                        <label for="message">Pesan:</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <!-- Radio & Checkbox -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <fieldset class="info-container !p-4 bg-white" data-title="Tombol Radio" data-description="Tombol radio (`type='radio'`) digunakan saat pengguna hanya boleh memilih satu opsi dari beberapa pilihan. Semua radio button dalam satu grup harus memiliki atribut `name` yang sama." data-code='&lt;fieldset&gt;
+  &lt;legend&gt;Pilih Gender:&lt;/legend&gt;
+  &lt;input type="radio" id="pria" name="gender" value="pria"&gt;
+  &lt;label for="pria"&gt;Pria&lt;/label&gt;
+  &lt;input type="radio" id="wanita" name="gender" value="wanita"&gt;
+  &lt;label for="wanita"&gt;Wanita&lt;/label&gt;
+&lt;/fieldset&gt;'>
+                            <div class="tooltip"><h3 class="font-bold">Tombol Radio</h3><p class="text-sm text-gray-300">Memungkinkan pengguna memilih SATU opsi dari beberapa pilihan.</p><p class="text-sm">Tag: <code>&lt;input type="radio"&gt;</code></p></div>
+                            <legend>Jenis Kelamin:</legend>
+                            <div class="radio-checkbox-container">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Pria</label>
+                            </div>
+                            <div class="radio-checkbox-container">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Wanita</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="info-container !p-4 bg-white" data-title="Checkbox" data-description="Checkbox (`type='checkbox'`) memungkinkan pengguna memilih nol atau lebih opsi dari beberapa pilihan. Setiap checkbox bisa memiliki atribut `name` yang sama atau berbeda." data-code='&lt;fieldset&gt;
+  &lt;legend&gt;Pilih Hobi:&lt;/legend&gt;
+  &lt;input type="checkbox" id="baca" name="hobi1" value="membaca"&gt;
+  &lt;label for="baca"&gt;Membaca&lt;/label&gt;
+  &lt;input type="checkbox" id="nulis" name="hobi2" value="menulis"&gt;
+  &lt;label for="nulis"&gt;Menulis&lt;/label&gt;
+&lt;/fieldset&gt;'>
+                            <div class="tooltip"><h3 class="font-bold">Checkbox</h3><p class="text-sm text-gray-300">Memungkinkan pengguna memilih BANYAK opsi dari beberapa pilihan.</p><p class="text-sm">Tag: <code>&lt;input type="checkbox"&gt;</code></p></div>
+                            <legend>Hobi:</legend>
+                            <div class="radio-checkbox-container">
+                                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                                <label for="reading">Membaca</label>
+                            </div>
+                            <div class="radio-checkbox-container">
+                                <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+                                <label for="gaming">Bermain Game</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <!-- Select Dropdown -->
+                    <div class="info-container !p-4 bg-white form-section" data-title="Select (Dropdown)" data-description="Elemen &lt;select&gt; membuat menu dropdown. Setiap pilihan di dalam dropdown didefinisikan dengan tag &lt;option&gt;." data-code='&lt;label for="kota"&gt;Pilih Kota:&lt;/label&gt;
+&lt;select id="kota" name="kota"&gt;
+  &lt;option value="jakarta"&gt;Jakarta&lt;/option&gt;
+  &lt;option value="bandung"&gt;Bandung&lt;/option&gt;
+  &lt;option value="surabaya"&gt;Surabaya&lt;/option&gt;
+&lt;/select&gt;'>
+                        <div class="tooltip"><h3 class="font-bold">Select (Dropdown)</h3><p class="text-sm text-gray-300">Membuat daftar pilihan berbentuk dropdown.</p><p class="text-sm">Tag: <code>&lt;select&gt;</code> dan <code>&lt;option&gt;</code></p></div>
+                        <label for="city">Kota Asal:</label>
+                        <select id="city" name="city">
+                            <option value="">--Pilih kota--</option>
+                            <option value="jakarta">Jakarta</option>
+                            <option value="surabaya">Surabaya</option>
+                            <option value="bandung">Bandung</option>
+                        </select>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="info-container !p-4 bg-white form-section" data-title="Tombol Form" data-description="Tombol sangat penting dalam form. `type='submit'` mengirim data form, `type='reset'` mengembalikan semua isian ke nilai awal, dan `type='button'` adalah tombol generik yang fungsinya bisa diatur dengan JavaScript." data-code='&lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;button type="button" onclick="alert(\'Tombol diklik!\')"&gt;Tombol Biasa&lt;/button&gt;'>
+                        <div class="tooltip"><h3 class="font-bold">Tombol Form</h3><p class="text-sm text-gray-300">Untuk melakukan aksi seperti mengirim atau mereset data.</p><p class="text-sm">Tag: <code>&lt;button&gt;</code></p></div>
+                        <div class="flex gap-4">
+                            <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Kirim</button>
+                            <button type="reset" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </div>
 
     <!-- Modal untuk Detail Informasi -->
     <div id="detail-modal" class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 relative">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-8 relative">
             <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-3xl">&times;</button>
             <h2 id="modal-title" class="text-3xl font-bold text-gray-800 mb-4"></h2>
-            <p id="modal-description" class="text-gray-600 mb-6"></p>
+            <div id="modal-description" class="text-gray-600 mb-6 leading-relaxed"></div>
             <h3 class="text-xl font-semibold text-gray-700 mb-3">Contoh Kode:</h3>
-            <pre><code id="modal-code" class="language-html"></code></pre>
+            <pre class="bg-gray-900 text-gray-300 p-4 rounded-lg overflow-x-auto"><code id="modal-code" class="language-html"></code></pre>
         </div>
     </div>
 
@@ -294,7 +474,7 @@
 
             clickableElements.forEach(elem => {
                 elem.addEventListener('click', (event) => {
-                    // Mencegah klik pada elemen anak (article) memicu modal dari elemen induknya (main)
+                    // Mencegah klik pada elemen anak memicu modal dari elemen induknya
                     event.stopPropagation(); 
                     
                     const title = elem.dataset.title;
@@ -335,4 +515,5 @@
     </script>
 </body>
 </html>
+
 
